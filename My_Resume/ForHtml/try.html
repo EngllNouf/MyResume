@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume of Nouf Aljedaani, Software Engineer">
+    <title>Nouf Aljedaani - Software Engineer</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff5f7 0%, #ffd1dc 100%);
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 
+                20px 20px 60px rgba(255, 182, 193, 0.3),
+                -20px -20px 60px rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffe4e1 0%, #ffb6c1 100%);
+            border-radius: 20px;
+            box-shadow: 
+                inset 5px 5px 15px rgba(255, 255, 255, 0.5),
+                inset -5px -5px 15px rgba(255, 182, 193, 0.3);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #ff69b4;
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 
+                5px 5px 15px rgba(255, 182, 193, 0.2),
+                -5px -5px 15px rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-info p {
+            margin: 0;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 
+                3px 3px 8px rgba(255, 182, 193, 0.2),
+                -3px -3px 8px rgba(255, 255, 255, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info p:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: #ff69b4;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #ff1493;
+        }
+
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 
+                8px 8px 20px rgba(255, 182, 193, 0.2),
+                -8px -8px 20px rgba(255, 255, 255, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            color: #ff69b4;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffe4e1;
+        }
+
+        h4 {
+            color: #ff69b4;
+            margin: 15px 0;
+        }
+
+        .skills, .languages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            margin: 10px 0;
+            padding: 10px 15px;
+            background: rgba(255, 228, 225, 0.3);
+            border-radius: 8px;
+            box-shadow: 
+                3px 3px 8px rgba(255, 182, 193, 0.1),
+                -3px -3px 8px rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        ul li:hover {
+            background: rgba(255, 182, 193, 0.2);
+            transform: translateX(5px);
+        }
+
+        .projects strong {
+            color: #ff69b4;
+            display: block;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .section {
+                padding: 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #ffe4e1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ffb6c1;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Resume of Nouf Aljedaani, Software Engineer">
+        <title>Nouf Aljedaani - Software Engineer</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+                color: #333;
+            }
+            .container {
+                width: 80%;
+                max-width: 1000px;
+                margin: 20px auto;
+                background-color: #fff;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            h1 {
+                font-size: 2em;
+                margin-bottom: 5px;
+            }
+            h2 {
+                color: #555;
+            }
+            hr {
+                border: 0;
+                height: 1px;
+                background-color: #ddd;
+            }
+            .contact-info {
+                margin-bottom: 20px;
+            }
+            .contact-info p {
+                margin: 5px 0;
+            }
+            .contact-info a {
+                text-decoration: none;
+                color: #333;
+            }
+            .section {
+                margin-bottom: 40px;
+            }
+            .section h3 {
+                margin-bottom: 10px;
+                color: #333;
+            }
+            .skills, .languages {
+                display: flex;
+                justify-content: space-between;
+            }
+            .skills div, .languages div {
+                width: 48%;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            ul li {
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Nouf Aljedaani</h1>
+                <h2>Software Engineer</h2>
+            </header>
+    
+            <section class="contact-info">
+                <p>📧 <a href="mailto:nouf.alj.000@icloud.com">nouf.alj.000@icloud.com</a></p>
+                <p>📞 0543744213</p>
+                <p>📍 Jeddah, Saudi Arabia</p>
+                <p>🔗 <a href="https://www.linkedin.com/in/nouf-aljedaani-14ba9a284" target="_blank">LinkedIn</a> | <a href="https://github.com/EngllNouf" target="_blank">GitHub</a></p>
+            </section>
+    
+            <hr>
+    
+            <section class="section">
+                <h3>Profile</h3>
+                <p>A Senior Software Engineering student and Front-End Web Developer with a strong foundation in software engineering principles and methodologies. I am proficient in HTML, CSS, JavaScript, and popular front-end frameworks. My passion lies in creating user-friendly designs and delivering exceptional user experiences. I am actively seeking opportunities to enhance my skills in software engineering further.</p>
+            </section>
+    
+            <section class="section">
+                <h3>Education</h3>
+                <p><strong>Bachelors of Software Engineering</strong>, University of Jeddah (08/2020 – present)</p>
+                <p>• Artificial Intelligence Club Member</p>
+            </section>
+    
+            <section class="section">
+                <h3>Volunteer Experiences</h3>
+                <p><strong>Technical Team Member</strong>, Artificial Intelligence Club (02/2024 – present)</p>
+                <p>• Working on the development of the Artificial Intelligence Club website (currently in progress).</p>
+            </section>
+    
+            <section class="section">
+                <h3>Courses</h3>
+                <p><strong>Foundations of Project Management</strong>, Google (12/2023 – 02/2024)</p>
+                <p><strong>The Philosophy of the Internet World</strong>, Digital Attaa (06/2022)</p>
+            </section>
+    
+            <section class="section">
+                <h3>Skills</h3>
+                <div class="skills">
+                    <div>
+                        <h4>Technical Skills</h4>
+                        <ul>
+                            <li>Web Development</li>
+                            <li>UI/UX</li>
+                            <li>Agile Methodologies (Scrum)</li>
+                            <li>Testing</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Programming Languages</h4>
+                        <ul>
+                            <li>HTML, CSS, JavaScript, Java</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skills">
+                    <div>
+                        <h4>Tools & Software</h4>
+                        <ul>
+                            <li>Figma</li>
+                            <li>GitHub</li>
+                            <li>Visual Studio</li>
+                            <li>NetBeans</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Communication & Collaboration</h4>
+                        <ul>
+                            <li>Teamwork</li>
+                            <li>Project Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="section">
+                <h3>Projects</h3>
+                <p><strong>TECH GATHER</strong> - The website allows users to discover upcoming hackathons and events, register securely, and access event details.</p>
+                <p><strong>TECHWORLD</strong> - The project made use of Figma for design purposes, and a prototype was created to facilitate the learning of programming languages. This was accomplished by incorporating challenges and explanatory videos, resulting in an engaging and interactive learning experience.</p>
+            </section>
+    
+            <section class="section">
+                <h3>Languages</h3>
+                <div class="languages">
+                    <div>
+                        <ul>
+                            <li>Arabic</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>English</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+    
+        </div>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
