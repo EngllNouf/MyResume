@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Information</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2b6cb0;
+            --secondary: #4299e1;
+            --accent: #63b3ed;
+            --text: #2d3748;
+            --background: #f7fafc;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --nav-bg: rgba(255, 255, 255, 0.98);
+            --shadow: rgba(0, 0, 0, 0.1);
+            --gradient-1: linear-gradient(135deg, #63b3ed 0%, #4299e1 100%);
+            --gradient-2: linear-gradient(135deg, #2b6cb0 0%, #4299e1 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--background);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .contact-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+        }
+
+        .contact-title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.05),
+                0 1px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.08),
+                0 1px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .contact-icon::after {
+            content: '';
+            position: absolute;
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            opacity: 0.3;
+        }
+
+        .contact-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .contact-label {
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info {
+            color: var(--text);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-1);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-card:hover::before {
+            opacity: 0.02;
+        }
+
+        @media (max-width: 768px) {
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .contact-card {
+                padding: 2rem;
+            }
+        }
+
+        .background-shape {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .shape1 {
+            width: 500px;
+            height: 500px;
+            background: var(--gradient-1);
+            top: -250px;
+            right: -250px;
+        }
+
+        .shape2 {
+            width: 400px;
+            height: 400px;
+            background: var(--gradient-2);
+            bottom: -200px;
+            left: -200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-shape shape1"></div>
+    <div class="background-shape shape2"></div>
+    
+    <div class="contact-wrapper">
+        <h1 class="contact-title">Contact Information</h1>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-label">Email Address</div>
+                <div class="contact-info">nouf.alj.000@icloud.com</div>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-label">Phone Number</div>
+                <div class="contact-info">0543744213</div>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-label">Location</div>
+                <div class="contact-info">Jeddah, Saudi Arabia</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.contact-card').forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                card.style.background = `
+                    radial-gradient(
+                        circle at ${x}px ${y}px,
+                        rgba(255,255,255,0.98) 0%,
+                        rgba(255,255,255,0.95) 100%
+                    )
+                `;
+            });
+
+            card.addEventListener('mouseleave', function() {
+                card.style.background = 'var(--card-bg)';
+            });
+        });
+    </script>
+</body>
+</html>
